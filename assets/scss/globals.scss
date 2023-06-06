@@ -1,0 +1,347 @@
+@import '_breakpoints';
+
+@font-face {
+  font-family: 'Ephesis';
+  src: url('/fonts/Ephesis-Regular.woff2') format('woff2'),
+    url('/fonts/Ephesis-Regular.woff') format('woff');
+  /* Add more font formats if necessary */
+}
+@font-face {
+  font-family: 'Geologica';
+  src: url('/fonts/Geologica-Regular.woff2') format('woff2'),
+    url('/fonts/Geologica-Regular.woff') format('woff');
+  /* Add more font formats if necessary */
+}
+@font-face {
+  font-family: 'Geologica-ExtraBold';
+  src: url('/fonts/Geologica-ExtraBold.woff2') format('woff2'),
+    url('/fonts/Geologica-ExtraBold.woff') format('woff');
+  /* Add more font formats if necessary */
+}
+
+@font-face {
+  font-family: 'GeologicaCursive-ExtraBold';
+  src: url('/fonts/GeologicaCursive-ExtraBold.woff2') format('woff2'),
+    url('/fonts/GeologicaCursive-ExtraBold.woff') format('woff');
+  /* Add more font formats if necessary */
+}
+
+:root {
+  --global-font-family: 'IBMPlexSans';
+  --global-font-family-alternative: 'Inter', sans-serif;
+  --global-block-family-code: 'IBMPlexMono', monospace;
+
+  --global-container-default: 1330px;
+  --global-container-medium: 1094px;
+  --global-container-small: 867px;
+  --global-container-smaller: 768px;
+  --global-container-tiny: 640px;
+
+  --global-navbar-height: 70px;
+
+  --global-gutter: 25px;
+
+  // bases
+  --global-color-black: #000;
+  --global-color-white: #fff;
+
+  //  durst main
+  --global-theme-durst-main: #798777;
+  --global-theme-durst-second: #a2b29f;
+  --global-theme-durst-third: #bdd2b6;
+  --global-theme-durst-fourth: #f8ede3;
+
+  //  helga main
+  --global-theme-helga-main: #ac7088;
+  --global-theme-helga-third: #deb6ab;
+  --global-theme-helga-second: #ecccb2;
+  --global-theme-helga-fourth: #f5e8c7;
+
+  //  rose main
+  --global-theme-rose-main: #ac7088;
+  --global-theme-rose-second: #f8e8ee;
+  --global-theme-rose-third: #fdcedf;
+  --global-theme-rose-fourth: #f9f5f6;
+
+  //  dusk main
+  --global-theme-dusk-main: #046582;
+  --global-theme-dusk-second: #6e7582;
+  --global-theme-dusk-third: #bb8082;
+  --global-theme-dusk-fourth: #ffafa7;
+
+  //  bright main
+  --global-theme-bright-main: #ffc1b6;
+  --global-theme-bright-second: #ffdcb8;
+  --global-theme-bright-third: #ffeebb;
+  --global-theme-bright-fourth: #ffe6e6;
+  --global-shadow-elephant: rgba(0, 0, 0, 0.1);
+
+  --global-font-size-gigantic: 132px;
+  --global-font-size-enormous: 100px;
+  --global-font-size-huge: 64px;
+  --global-font-size-big: 48px;
+  --global-font-size-larger: 32px;
+  --global-font-size-large: 24px;
+  --global-font-size-default: 18px;
+  --global-font-size-medium: 16px;
+  --global-font-size-small: 14px;
+
+  @include desktop-up {
+    --global-font-size-gigantic: 88px;
+    --global-font-size-enormous: 64px;
+    --global-font-size-huge: 48px;
+    --global-font-size-big: 36px;
+    --global-font-size-larger: 24px;
+    --global-font-size-large: 18px;
+    --global-font-size-default: 16px;
+    --global-font-size-medium: 14px;
+    --global-font-size-small: 12px;
+  }
+
+  @include tablet-up {
+    --global-font-size-gigantic: 72px;
+    --global-font-size-enormous: 56px;
+    --global-font-size-huge: 40px;
+    --global-font-size-big: 32px;
+    --global-font-size-larger: 20px;
+    --global-font-size-large: 16px;
+    --global-font-size-default: 14px;
+    --global-font-size-medium: 12px;
+    --global-font-size-small: 10px;
+  }
+
+  @include mobile-up {
+    --global-font-size-gigantic: 48px;
+    --global-font-size-enormous: 40px;
+    --global-font-size-huge: 32px;
+    --global-font-size-big: 24px;
+    --global-font-size-larger: 18px;
+    --global-font-size-large: 16px;
+    --global-font-size-default: 14px;
+    --global-font-size-medium: 12px;
+    --global-font-size-small: 10px;
+  }
+
+  --global-mobile-nav-button-size: 40px;
+
+  --global-border-radius: 6px;
+  --global-button-border-radius: 22px;
+
+  --global-header-height: 80px !important;
+  --global-sidebar-width: 300px;
+  --global-docs-top-spacing: 30px;
+  --global-container-spacing-default: 60px;
+}
+
+*,
+*::after,
+*::before {
+  font-family: 'Geologica';
+  box-sizing: border-box;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+html {
+  font-size: var(--global-font-size-default);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: var(--global-font-family);
+  color: var(--global-colors-black);
+  background-color: var(--global-colors-white);
+  position: relative;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: var(--global-font-size-large);
+  font-weight: 500;
+
+  @include tablet-up {
+    font-size: var(--global-font-size-enormous);
+  }
+}
+
+.logotype {
+  font-family: 'Ephesis';
+  font-weight: 800;
+
+  font-size: var(--global-font-size-larger);
+
+  background: transparent;
+
+  @include tablet-up {
+    font-size: var(--global-font-size-enormous);
+  }
+}
+
+.button {
+  padding: calc(var(--global-gutter) / 4) var(--global-gutter);
+  border-radius: var(--global-button-border-radius);
+}
+
+.theme {
+  &__durst {
+    .hero {
+      background: var(--global-theme-durst-fourth);
+
+      .intense {
+        font-weight: 900;
+        font-style: italic;
+        color: var(--global-theme-durst-main);
+      }
+    }
+
+    .navbar {
+      .brand {
+        color: var(--global-theme-durst-main);
+      }
+
+      a {
+        &:hover {
+          color: var(--global-theme-durst-main);
+        }
+      }
+    }
+
+    .button {
+      background-color: var(--global-theme-durst-main);
+      color: var(--global-color-white);
+
+      &:hover {
+        background-color: var(--global-theme-durst-fourth);
+        color: var(--global-color-black);
+      }
+    }
+  }
+
+  &__helga {
+    .hero {
+      background: var(--global-theme-helga-fourth);
+
+      .intense {
+        font-weight: 900;
+        font-style: italic;
+        color: var(--global-theme-helga-main);
+      }
+    }
+    .navbar {
+      .brand {
+        color: var(--global-theme-helga-main);
+      }
+
+      a {
+        &:hover {
+          color: var(--global-theme-helga-main);
+        }
+      }
+    }
+    .button {
+      background-color: var(--global-theme-helga-main);
+      color: var(--global-color-white);
+
+      &:hover {
+        background-color: var(--global-theme-helga-fourth);
+        color: var(--global-color-black);
+      }
+    }
+  }
+
+  &__dusk {
+    .hero {
+      background: var(--global-theme-dusk-fourth);
+
+      .intense {
+        font-weight: 900;
+        font-style: italic;
+        color: var(--global-theme-dusk-main);
+      }
+    }
+    .navbar {
+      .brand {
+        color: var(--global-theme-dusk-main);
+      }
+
+      a {
+        &:hover {
+          color: var(--global-theme-dusk-main);
+        }
+      }
+    }
+    .button {
+      background-color: var(--global-theme-dusk-main);
+      color: var(--global-color-white);
+
+      &:hover {
+        background-color: var(--global-theme-dusk-fourth);
+        color: var(--global-color-black);
+      }
+    }
+  }
+
+  &__rose {
+    .hero {
+      background: var(--global-theme-rose-fourth);
+
+      .intense {
+        font-weight: 900;
+        font-style: italic;
+        color: var(--global-theme-rose-main);
+      }
+    }
+    .navbar {
+      .brand {
+        color: var(--global-theme-rose-main);
+      }
+
+      a {
+        &:hover {
+          color: var(--global-theme-rose-main);
+        }
+      }
+    }
+    .button {
+      background-color: var(--global-theme-rose-main);
+      color: var(--global-color-white);
+
+      &:hover {
+        background-color: var(--global-theme-rose-fourth);
+        color: var(--global-color-black);
+      }
+    }
+  }
+
+  &__bright {
+    .hero {
+      background: var(--global-theme-bright-fourth);
+
+      .intense {
+        font-weight: 900;
+        font-style: italic;
+        color: var(--global-theme-bright-main);
+      }
+    }
+    .navbar {
+      .brand {
+        color: var(--global-theme-bright-main);
+      }
+
+      a {
+        &:hover {
+          color: var(--global-theme-bright-main);
+        }
+      }
+    }
+    .button {
+      background-color: var(--global-theme-bright-main);
+      color: var(--global-color-white);
+
+      &:hover {
+        background-color: var(--global-theme-bright-fourth);
+        color: var(--global-color-black);
+      }
+    }
+  }
+}
